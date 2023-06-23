@@ -17,7 +17,7 @@ export const fetchAllPost = createAsyncThunk(
   async (page) => {
     try {
       const { data } = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts?_limit=4&_page=${page}`
+        `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`
       );
 
       return data;

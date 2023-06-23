@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const initialState = {
   loading: false,
@@ -23,6 +24,7 @@ export const fetchAllPost = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   }
 );
@@ -38,6 +40,7 @@ export const fetchSinglePost = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   }
 );
@@ -53,6 +56,7 @@ export const fetchCurrentPostAuthor = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   }
 );
@@ -68,6 +72,7 @@ export const fetchCurrentPostComments = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   }
 );
